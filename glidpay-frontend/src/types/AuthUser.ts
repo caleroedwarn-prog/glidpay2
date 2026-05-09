@@ -35,3 +35,9 @@ export type RegisterRequest = {
     password: string;
     confirm_password: string;
 }
+
+// what the backend sends back after successfully registering a user
+export type RegisterResponse = {
+    message: string;
+    user: string;
+}
