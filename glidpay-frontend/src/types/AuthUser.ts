@@ -18,6 +18,13 @@ export type AuthUser = {
     phone: string;
     full_name: string;
 }
+
+// Shape of the logged in page state in the frontend
+export type AuthState = {
+    isLoggedIn: boolean;
+    error: string | null;
+
+}
 // What the backend sends back when a user tries to log in but fails
 export type LoginErrorResponse = {
     detail: string;
