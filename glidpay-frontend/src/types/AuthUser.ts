@@ -27,4 +27,11 @@ export type LoginInvalidCredentialsResponse = {
     detail: string;
 }
 
-// Register re
+// Register request sent to the backend when a user tries to register
+export type RegisterRequest = {
+    full_name: string;
+    email: string;
+    country: string;
+    password: string;
+    confirm_password: string;
+}
