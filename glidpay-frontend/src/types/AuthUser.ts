@@ -10,3 +10,8 @@ export type LoginResponse = {
     token_type: string;
     user: string;
 }
+
+// What the backend sends back when a user tries to log in but fails
+export type LoginErrorResponse = {
+    detail: string;
+}
