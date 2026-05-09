@@ -11,6 +11,13 @@ export type LoginResponse = {
     user: string;
 }
 
+// Shape of Logged in User
+export type AuthUser = {
+    user_name: string;
+    email: string;
+    phone: string;
+    full_name: string;
+}
 // What the backend sends back when a user tries to log in but fails
 export type LoginErrorResponse = {
     detail: string;
@@ -30,6 +37,7 @@ export type LoginInvalidCredentialsResponse = {
 // Register request sent to the backend when a user tries to register
 export type RegisterRequest = {
     full_name: string;
+    user_name: string;
     email: string;
     country: string;
     password: string;
