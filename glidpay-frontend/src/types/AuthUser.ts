@@ -21,3 +21,10 @@ export type LoginTooManyAttemptsResponse = {
     detail: string;
     retry_after: number; // in seconds
 }
+
+// what the backend sends back when a user tries to log in but fails due to invalid credentials
+export type LoginInvalidCredentialsResponse = {
+    detail: string;
+}
+
+// Register re
