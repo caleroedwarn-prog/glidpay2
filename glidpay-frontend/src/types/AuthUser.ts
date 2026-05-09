@@ -41,3 +41,8 @@ export type RegisterResponse = {
     message: string;
     user: string;
 }
+
+// what the backend sends back when a user tries to register but fails due to validation errors
+export type RegisterValidationErrorResponse = {
+    detail: string;
+}    
