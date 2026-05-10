@@ -13,6 +13,8 @@ type AuthContextUser = {
 // I created a global box context box
  const AuthContext = createContext<AuthContextUser | null>(null)
 
+ // Here I created a provider that will wrap the app and provide the context to all components that need it
+
 export const AuthProvider = ({children}: {children: React.ReactNode}) => {
     const[ user, setUser ] = useState<AuthUser | null>(null)
     const[ isLoggedIn, setIsLoggedIn ] = useState(false)
