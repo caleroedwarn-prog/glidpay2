@@ -59,6 +59,7 @@ function LoginPage(){
             onChange={handleChange} /><br /><br />
 
             <button 
+            className="button"
             type="submit"
             disabled={isLoading}
             >Login </button>

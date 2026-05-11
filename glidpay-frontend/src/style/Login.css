@@ -8,6 +8,9 @@ body{
     background-image: url('../images/pupple_scale.jpg');
     background-size: cover;
     background-position: center;
+    transition: all 1s ease-in;
+    animation: fadeIn 1s ease-in;
+    animation-delay: 0.5s;
     height: 100vh;
 }
 .Login_form{
@@ -63,4 +66,21 @@ pre{
     color: #fff;
     font-size: 18px;
     margin-bottom: 20px;
+}
+.button{
+    width: 160%;
+    height: 50px;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 15px;
+    margin: 10%;
+    margin-left: -27%;
+    box-sizing: border-box;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
 }
