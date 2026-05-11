@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { loginUser } from "../api/auth";
 import { type LoginRequest } from "../types/AuthUser";
+import "../style/Login.css"
 
 function LoginPage(){
 
