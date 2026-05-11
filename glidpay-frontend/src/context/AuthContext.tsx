@@ -19,10 +19,10 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
     const[ user, setUser ] = useState<AuthUser | null>(null)
     const[ isLoggedIn, setIsLoggedIn ] = useState(false)
     
-    const login = (user: AuthUser) => {
+    const login = (user: AuthUser, token: string) => {
         setUser(user)
         setIsLoggedIn(true)
-        localStorage.removeItem("token")
+        localStorage.setItem("token", token)
     }
 
     const logout = () =>{

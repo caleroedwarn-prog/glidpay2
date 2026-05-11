@@ -8,15 +8,15 @@ export type LoginRequest = {
 export type LoginResponse = {
     token: string;
     token_type: string;
-    user: string;
+    user: AuthUser;
 }
 
 // Shape of Logged in User
 export type AuthUser = {
-    user_name: string;
+    username: string;
     email: string;
     phone: string;
-    full_name: string;
+    fullname: string;
 }
 
 // Shape of the logged in page state in the frontend
@@ -43,8 +43,8 @@ export type LoginInvalidCredentialsResponse = {
 
 // Register request sent to the backend when a user tries to register
 export type RegisterRequest = {
-    full_name: string;
-    user_name: string;
+    fullname: string;
+    username: string;
     email: string;
     country: string;
     password: string;

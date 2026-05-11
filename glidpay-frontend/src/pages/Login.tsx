@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../types/AuthUser";
+import { useAuth } from "../hooks/useAuth";
 import { loginUser } from "../api/auth";
 import { type LoginRequest } from "../types/AuthUser";
 
 function LoginPage(){
 
-    const { login } = useAuth
-    const navigate = useNavigate
+    const { login } = useAuth()
+    const navigate = useNavigate()
 
     const [form, setForm] = useState<LoginRequest>({
         username: "",
