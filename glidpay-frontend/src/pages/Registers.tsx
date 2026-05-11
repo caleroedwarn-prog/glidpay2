@@ -51,7 +51,7 @@ function RegisterPage(){
             name="fullname"
             value={form.fullname}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="username"
@@ -59,7 +59,7 @@ function RegisterPage(){
             name="username"
             value={form.username}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="country"
@@ -67,7 +67,7 @@ function RegisterPage(){
             name="country"
             value={form.country}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="phone"
@@ -75,7 +75,7 @@ function RegisterPage(){
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="email"
@@ -83,7 +83,7 @@ function RegisterPage(){
             name="email"
             value={form.email}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="password"
@@ -91,7 +91,7 @@ function RegisterPage(){
             name="password"
             value={form.password}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <input
             type="confirm_password"
@@ -99,9 +99,11 @@ function RegisterPage(){
             name="confirm_password"
             value={form.confirm_password}
             onChange={handleChange}
-            />
+            /><br /><br />
 
             <button type="submit">Register</button>
+            {error && <p>{error}</p>}
+            <p>{isLoading}</p>
         </form>
         </>
     )
