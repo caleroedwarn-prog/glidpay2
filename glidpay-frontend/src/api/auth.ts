@@ -1,3 +1,4 @@
+
 import { type LoginRequest, type LoginResponse, type RegisterRequest, type RegisterResponse } from "../types/AuthUser";
 
 const BASE_URL = "https://localhost:8000"
