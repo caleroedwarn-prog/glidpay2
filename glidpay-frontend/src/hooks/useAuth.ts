@@ -3,6 +3,6 @@ import AuthContext from "../context/AuthContext";
 
 export  const useAuth = () => {
     const context = useContext(AuthContext)
-    if(!context) throw new Error("useAuth must exit inside Provider")
+    if(!context) throw new Error("useAuth must exist inside Provider")
     return context
 }
