@@ -42,7 +42,11 @@ function RegisterPage(){
     }
 
     return(
-        <>
+        <div className="RegisterPage">
+                <div className="Login_image">
+            <img src="/images/glidpay-logo.png" alt="login" width={600}/>
+        </div>
+            <div className="Register_form">
         <form onSubmit={handleSubmit}>
 
             <input
@@ -105,7 +109,8 @@ function RegisterPage(){
             {error && <p>{error}</p>}
             <p>{isLoading}</p>
         </form>
-        </>
+        </div>
+        </div>
     )
 }
 export default RegisterPage;
