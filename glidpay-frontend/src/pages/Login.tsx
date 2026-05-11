@@ -38,7 +38,10 @@ function LoginPage(){
         }
     }
     return(
-        <>
+        <div className="LoginPage">
+        <div className="Login_image">
+            <img src="/images/glidpay-logo.png" alt="login" width={600}/>
+        </div>
         <div className="Login_form">
             <h2>Login</h2>
             <pre>Welcome back...</pre>
@@ -68,7 +71,7 @@ function LoginPage(){
             </form>
         </div>
         </div>
-        </>
+        </div>
     )
 
 }
