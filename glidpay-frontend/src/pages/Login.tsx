@@ -39,6 +39,9 @@ function LoginPage(){
     }
     return(
         <>
+        <div className="Login_form">
+            <h2>Login</h2>
+            <pre>Welcome back...</pre>
         <form onSubmit={handleSubmit}>
             <input 
             type="text" 
@@ -61,6 +64,7 @@ function LoginPage(){
 
             {error && <p>{error}</p>} 
             </form>
+        </div>
         </>
     )
 
