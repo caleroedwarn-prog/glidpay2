@@ -38,7 +38,7 @@ function LoginPage(){
     }
     return(
         <>
-        <form action={} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input 
             type="text" 
             placeholder="Username"
@@ -57,7 +57,7 @@ function LoginPage(){
             type="submit"
             disabled={isLoading}
             >Login </button>
-            
+
             {error && <p>{error}</p>} 
             </form>
         </>
