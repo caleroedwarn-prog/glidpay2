@@ -44,14 +44,14 @@ function LoginPage(){
             placeholder="Username"
             name="username"
             value={form.username}
-            onChange={handleChange} />
+            onChange={handleChange} /><br /><br />
 
             <input 
             type="password"
             placeholder="password"
             name="password"
             value={form.password}
-            onChange={handleChange} />
+            onChange={handleChange} /><br /><br />
 
             <button 
             type="submit"
