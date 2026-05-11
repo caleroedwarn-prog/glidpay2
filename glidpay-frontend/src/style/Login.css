@@ -5,5 +5,8 @@
     font-family: monospace;
 }
 body{
-    background-image: url('/images/pupple_scale.jpg');
+    background-image: url('../images/pupple_scale.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
