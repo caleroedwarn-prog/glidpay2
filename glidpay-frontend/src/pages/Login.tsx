@@ -25,7 +25,8 @@ function LoginPage(){
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
 
-    const handleSubmit = async () =>{
+    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) =>{
+        e.preventDefault()
         setIsLoading(true)
         try{
             const response = await loginUser(form)

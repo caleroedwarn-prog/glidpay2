@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { type RegisterRequest } from "../types/AuthUser";
 import { registerUser } from "../api/auth";
+import "../style/Register.css"              
 
 function RegisterPage(){
     
@@ -43,43 +44,44 @@ function RegisterPage(){
 
     return(
         <div className="RegisterPage">
-                <div className="Login_image">
+            <div className="Register_image">
             <img src="/images/glidpay-logo.png" alt="login" width={600}/>
         </div>
             <div className="Register_form">
         <form onSubmit={handleSubmit}>
 
+            <div className="Register_input">
             <input
-            type="fullname"
-            placeholder="full Name"
+            type="text"
+            placeholder="full name"
             name="fullname"
             value={form.fullname}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
-            type="username"
+            type="text"
             placeholder="username"
             name="username"
             value={form.username}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
-            type="country"
+            type="text"
             placeholder="country"
             name="country"
             value={form.country}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
-            type="phone"
+            type="tel"
             placeholder="phone"
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
             type="email"
@@ -87,7 +89,7 @@ function RegisterPage(){
             name="email"
             value={form.email}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
             type="password"
@@ -95,19 +97,20 @@ function RegisterPage(){
             name="password"
             value={form.password}
             onChange={handleChange}
-            /><br /><br />
+            />
 
             <input
-            type="confirm_password"
+            type="password"
             placeholder="confirm password"
             name="confirm_password"
             value={form.confirm_password}
             onChange={handleChange}
-            /><br /><br />
+            />
 
-            <button type="submit">Register</button>
+            <button className="button" type="submit">Register</button>
             {error && <p>{error}</p>}
             <p>{isLoading}</p>
+            </div>
         </form>
         </div>
         </div>
