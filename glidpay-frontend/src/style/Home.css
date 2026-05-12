@@ -4,5 +4,8 @@
     font-family: monospace;
 }
  body{
-    background-image: url("/images/pupple_scale.jpg")/cover/no-repeat;
+    background-image:linear-gradient(rgba(254, 254, 254, 0.6)), url("/images/pupple_scale.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
  }

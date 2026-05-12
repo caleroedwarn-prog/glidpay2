@@ -1,4 +1,5 @@
- function HomePage(){
+import "../style/Home.css"
+function HomePage(){
     return(
         <>
         </>
