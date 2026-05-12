@@ -48,6 +48,8 @@ function RegisterPage(){
             <img src="/images/glidpay-logo.png" alt="login" width={600}/>
         </div>
             <div className="Register_form">
+                <h1>Register</h1>
+                <pre>Start moving Money the Smarter Way...</pre>
         <form onSubmit={handleSubmit}>
 
             <div className="Register_input">
