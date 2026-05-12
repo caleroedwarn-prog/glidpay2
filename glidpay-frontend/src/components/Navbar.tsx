@@ -5,7 +5,7 @@ export default function Navbar() {
     return(
         <nav className="navbar">
             <div className="navbar_logo">
-                <img src="/images/glidpay-logo.png" alt="logo"></img>
+                <img src="/images/glidpay-logo.png" alt="logo" width={200}></img>
             </div>
             <div className="Link-name">
                 <Link to="/">Home</Link>
