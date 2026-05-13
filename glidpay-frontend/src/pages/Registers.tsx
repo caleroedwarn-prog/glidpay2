@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { type RegisterRequest } from "../types/AuthUser";
 import { registerUser } from "../api/auth";
 import "../style/Register.css"              
@@ -113,6 +113,7 @@ function RegisterPage(){
             {error && <p>{error}</p>}
             <p>{isLoading}</p>
             </div>
+            <p>have an account? <Link to="/login">sign-in</Link></p>
         </form>
         </div>
         </div>

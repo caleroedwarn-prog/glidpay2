@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { loginUser } from "../api/auth";
 import { type LoginRequest } from "../types/AuthUser";
@@ -69,6 +69,8 @@ function LoginPage(){
             >Login </button>
 
             {error && <p>{error}</p>} 
+            <br /><br />
+            <p>Don't have an account? <Link to="/register">Sign up</Link></p>
             </form>
         </div>
         </div>
