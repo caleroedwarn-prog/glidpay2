@@ -10,6 +10,7 @@ export default function Features(){
     </div>
 
     <div className="features">
+        <h2>feature</h2>
         <div className="feature">
             <h2>Global Feature</h2>
             <p>Send and receive money instantly across countries with fast processing and real-time transaction update</p>
@@ -28,9 +29,33 @@ export default function Features(){
 
         <div className="feature">
             <h2>Advanced Security</h2>
-            <
+            <p>Protect your funds using encrypted systems, <br /> secret key verification, and advance account security</p>
+            <pre>Encrypted Transaction</pre>
+            <pre>Secret Key Verification</pre>
+            <pre>Account Security</pre>
             </div>
+
+        <div className="feature">
+            <h2>Mobile Banking</h2>
+            <p>Access your Wallet anytime through a smooth and secure mobile first experience</p>
+            <pre>Mobile App</pre>
+            <pre>Secure Access</pre>
+            <pre>Real-time Notifications</pre>
+        </div>
+
+        <div className="feature">
+            <h2>Secure Withdrawals</h2>
+            <p>Every transfer and withdrawal is protected with additional verification for maximum safety</p>
+            <pre>Two-Factor Authentication</pre>
+            <pre>High-Safety</pre>
+            <pre>Fraud Detection</pre>
+        </div>
     </div>
+
+    <div className="Securities">
+        
+    </div>
+
     </>
    ) 
 }
