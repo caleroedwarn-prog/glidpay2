@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "../style/navbar.css";
+import { memo } from "react";
 
-export default function Navbar() {
+export default memo(function Navbar() {
     return(
         <nav className="navbar">
             <div className="navbar-logo">
@@ -15,4 +16,4 @@ export default function Navbar() {
             </div>
         </nav>
     )
-}
+})
