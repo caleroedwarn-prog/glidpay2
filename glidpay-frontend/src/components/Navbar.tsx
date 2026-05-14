@@ -10,8 +10,9 @@ export default memo(function Navbar() {
             </div>
             <div className="Link-name">
                 <Link to="/">Home</Link>
-                <Link to="/login">sign-In</Link>
-                <Link to="/register">sign-Up</Link>
+                <Link to="/features">Features</Link>
+                <Link to="/login">sign-In</Link>|
+                <Link to="/register">get-started</Link>
                 <Link to="/dashboard">Dashboard</Link>
             </div>
         </nav>
