@@ -10,7 +10,7 @@ export default function Features(){
     </div>
 
     <div className="features">
-        <h2>feature</h2>
+        <h3>feature</h3>
         <div className="feature">
             <h2>Global Feature</h2>
             <p>Send and receive money instantly across countries with fast processing and real-time transaction update</p>
@@ -51,11 +51,6 @@ export default function Features(){
             <pre>Fraud Detection</pre>
         </div>
     </div>
-
-    <div className="Securities">
-        
-    </div>
-
     </>
    ) 
 }
