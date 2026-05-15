@@ -3,14 +3,14 @@
     background: linear-gradient(15deg, rgba(197, 69, 180, 0.3), rgba(65, 47, 219, 0.1));
     width: 70%;
     height: 400px;
-    margin-left: 2%;
+    margin-left: 8%;
     overflow: hidden;
     border-radius: 20px;
-    z-index: -1000;
+    z-index: 0;
 }
 .security-header p, .security-header pre{
-    margin-left: 3%;
-    margin-top: 5%;
+    margin-left: 8%;
+    margin-top: 18%;
     font-size: 18px;
     color: #4b0141;
 }
@@ -20,8 +20,28 @@
     flex-wrap: wrap;
     gap: 24px;
     margin-top: 3%;
-    margin-left: 2%;
+    margin-left: 8%;
 }
-.Security{
+.security-copy img{
+    float: right;
+    width: 40%;
+    height: 300px;
+    margin-right: 2%;
+    margin-top: -25%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.5);
+}
+.security-copy h2{
+    position: relative;
+    top: 100px;
+    margin-left: 8%;
+}
 
+.security img{
+    width: 45%;
+    height: 300px;
+    border-radius: 20px;
+    padding: 20px;
 }

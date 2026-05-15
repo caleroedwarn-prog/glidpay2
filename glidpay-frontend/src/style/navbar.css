@@ -68,3 +68,13 @@
     margin: 0;
     padding: 0;
 }
+.navbar-logo img{
+    float: right;
+    opacity: 9000%;
+    width: 100%;
+    margin-right: 2%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.5);
+}

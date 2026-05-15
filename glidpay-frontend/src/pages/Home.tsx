@@ -70,14 +70,15 @@ function HomePage(){
                 <h2>Bank-Grade Security to Protect what Matters</h2>
                 <p>GlidPay uses advanced protection systems, <br /> encrypted infrastructure, device verification, <br /> and multiple authentication layers to keep your <br /> money and personal information secure</p>
                 <span>Learn more-</span>
+                <img alt="security illustration" src="/images/lock.jpg" />
             </div>
-            <img alt="security illustration" src="/images/pupple_scale.jpg" />
         </div>
         
         <div className="security-features">
             <div className="security">
                 <h2><pre>End-to-End Encryption</pre></h2>
                 <pre>Your data and transactions are fully encrypted and securely protected</pre>
+                <img alt="encryption-illustration" src="/images/encription.jpg" />
             </div>
         
             <div className="security">
