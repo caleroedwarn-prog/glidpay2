@@ -1,5 +1,6 @@
 import "../style/Home.css"
 import "../style/features.css";
+import "../style/security.css";
 function HomePage(){
     return(
         <>
@@ -65,10 +66,12 @@ function HomePage(){
         <h3>Security</h3>
     </div>
         <div className="security-header">
-            <pre>Bank-Grade Security to Protect what Matters
-            <p>GlidPay uses advanced protection systems, <br /> encrypted infrastructure, device verification, <br /> and multiple authentication layers to keep your <br /> money and personal information secure</p>
-            <span>Learn more-</span>
-            </pre>
+            <div className="security-copy">
+                <h2>Bank-Grade Security to Protect what Matters</h2>
+                <p>GlidPay uses advanced protection systems, <br /> encrypted infrastructure, device verification, <br /> and multiple authentication layers to keep your <br /> money and personal information secure</p>
+                <span>Learn more-</span>
+            </div>
+            <img alt="security illustration" src="/images/pupple_scale.jpg" />
         </div>
         
         <div className="security-features">
@@ -103,7 +106,7 @@ function HomePage(){
             </div> 
         </div> 
         </section>
-        
+
         <section id="How-it-works"></section>
         <section id="about"></section>
         </>

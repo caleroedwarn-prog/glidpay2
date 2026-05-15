@@ -75,14 +75,5 @@
     margin-bottom: 8px;
 }
 
-.security-header{
-    box-sizing: border-box;
-    background: linear-gradient(15deg, rgba(197, 69, 180, 0.3), rgba(65, 47, 219, 0.1));
-    width: 70%;
-    height: 400px;
-    margin-top: 3%;
-    margin-left: 2%;
-    overflow: hidden;
-    border-radius: 20px;
-}
+
 

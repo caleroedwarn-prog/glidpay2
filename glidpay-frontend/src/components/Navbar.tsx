@@ -3,6 +3,14 @@ import "../style/navbar.css";
 import { memo } from "react";
 
 export default memo(function Navbar() {
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id)
+        if(section){
+            const navbarHeight = 90
+            const top = section.offsetTop - navbarHeight
+            window.scrollTo({ top, behavior: "smooth" })
+        }
+    }
     return(
         <nav className="navbar">
             <div className="navbar-logo">
@@ -10,9 +18,9 @@ export default memo(function Navbar() {
             </div>
             <div className="Link-name">
                 <ul className="navbar-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#Security">Security</a></li>
+                    <Link to="/home"><li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>Home</a></li></Link>
+                    <li><a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection("features"); }}>Features</a></li>
+                    <li><a href="#Security" onClick={(e) => { e.preventDefault(); scrollToSection("Security"); }}>Security</a></li>
                 </ul>
                 <Link to="/login">sign-In</Link>|
                 <Link to="/register">get-started</Link>
