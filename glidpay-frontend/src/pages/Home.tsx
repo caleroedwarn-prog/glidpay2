@@ -58,6 +58,8 @@ function HomePage(){
         </div>
     </div>
         </section>
+
+
 <section id="Security">
     <div className="Securities">
         <h3>Security</h3>
@@ -101,6 +103,7 @@ function HomePage(){
             </div> 
         </div> 
         </section>
+        
         <section id="How-it-works"></section>
         <section id="about"></section>
         </>
