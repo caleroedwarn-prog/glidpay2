@@ -63,6 +63,7 @@ function HomePage(){
 
 <section id="Security">
     <div className="Securities">
+        <div className="line"></div>
         <h3>Security</h3>
     </div>
         <div className="security-header">
@@ -84,26 +85,31 @@ function HomePage(){
             <div className="security">
                 <h2><pre>Secret Key Protection</pre></h2>
                 <pre>Sensitive actions require your personal secret authorization key</pre>
+                <img alt="secret key" src="/images/key.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Two-Factor Authentication</pre></h2>
                 <pre>Add an extra layer of protection to your account login and transactions</pre>
+                <img alt="two factor authenticator" src="/images/2 factor Authentication.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Real-Time Fraud Monitoring</pre></h2>
                 <pre>Suspicious activities are detected instantly to prevent unauthorized access</pre>
+                <img alt="Fraud detecttion" src="/images/anit-fraud.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Device Verification</pre></h2>
                 <pre>Only trusted devices can securely access your GlidPay account</pre>
+                <img alt="2FA" src="/images/security.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Secure Cloud Infrastructure</pre></h2>
                 <pre>Modern cloud systems ensure reliability, uptime, and secure transaction processing</pre>
+                <img alt="cloud security" src="/images/2FA.jpg" />
             </div> 
         </div> 
         </section>
