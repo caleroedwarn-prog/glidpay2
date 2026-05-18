@@ -1,6 +1,7 @@
 import "../style/Home.css"
 import "../style/features.css";
 import "../style/security.css";
+import { FaUserPlus, FaWallet, FaPaperPlane } from "react-icons/fa";
 function HomePage(){
     return(
         <>
@@ -123,6 +124,39 @@ function HomePage(){
             <div className="followUp-Header">
                 <h2>How it works</h2>
             </div>
+
+            <div className="followUp-content">
+                <h1>01</h1>
+                <pre><FaUserPlus />App signup</pre>
+                <h2>Sign Up in Second</h2>
+                <p>One account.. Full access. <br /> Register with Phone aend Email <br /> and your are in. </p>
+                <div className="line1"></div>
+                <pre>No hidden fees, no stress</pre>
+            </div>
+
+            <div className="line2"></div>
+
+             <div className="followUp-content">
+                <h1>02</h1>
+                <pre><FaWallet />Fund Wallet</pre>
+                <h2>Power Up your Wallet</h2>
+                <p>Deposit Money instantly <br /> and watch your wallet<br /> Grow in real time </p>
+                <div className="line1"></div>
+                <pre>fast. reliable. Always ready</pre>
+            </div>
+
+             <div className="line2"></div>
+
+             <div className="followUp-content">
+                <h1>03</h1>
+                <pre><FaPaperPlane />Send & Receive</pre>
+                <h2>Move Money Freely</h2>
+                <p>Transfer to anyone <br /> Receive from anywhere  <br /> withdraw with your pin. </p>
+                <div className="line1"></div>
+                <pre>No hidden fees, no stress</pre>
+            </div>
+
+
         </section>
         <section id="about"></section>
         </>
