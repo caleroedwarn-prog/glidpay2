@@ -1,3 +1,4 @@
+
 .security-header{
     position: relative;
     box-sizing: border-box;
@@ -50,11 +51,7 @@
     height: 300px;
     height: 300px;
     border-radius: 30px;
-    mix-blend-mode: screen;
-    padding: 20px;
-    mix-blend-mode: multiply;
     border: none;
-    clip-path: inset(20px 10px round 16px);
     clip-path: inset(10px round 16px);
 }
 .securities{
@@ -69,7 +66,8 @@
     background: linear-gradient(
         to right,
         transparent,
-        #9333EA
+        #9333EA,
+        transparent
     );
     box-shadow: 0 0 8px rgba(147, 51, 234, 0.6);
 }

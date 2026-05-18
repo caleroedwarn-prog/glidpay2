@@ -6,7 +6,7 @@ export default memo(function Navbar() {
     const scrollToSection = (id: string) => {
         const section = document.getElementById(id)
         if(section){
-            const navbarHeight = 90
+            const navbarHeight = 120
             const top = section.offsetTop - navbarHeight
             window.scrollTo({ top, behavior: "smooth" })
         }
@@ -21,6 +21,8 @@ export default memo(function Navbar() {
                     <Link to="/home"><li><a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>Home</a></li></Link>
                     <li><a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection("features"); }}>Features</a></li>
                     <li><a href="#Security" onClick={(e) => { e.preventDefault(); scrollToSection("Security"); }}>Security</a></li>
+                    <li><a href="#How-it-works" onClick={(e) => { e.preventDefault(); scrollToSection("How-it-works"); }}>How it works</a></li>
+                    <li><a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection("about")}}>About</a></li>
                 </ul>
                 <Link to="/login">sign-In</Link>|
                 <Link to="/register">get-started</Link>
