@@ -1,6 +1,7 @@
 import "../style/Home.css"
 import "../style/features.css";
 import "../style/security.css";
+import "../style/How-it-works.css";
 import { FaUserPlus, FaWallet, FaPaperPlane } from "react-icons/fa";
 function HomePage(){
     return(
@@ -22,6 +23,16 @@ function HomePage(){
             <div className="line"></div>
             <h3>feature</h3>
         </div>
+
+     <div className="feature-Head">
+                <h2>How it works</h2>
+                <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
+                <div className="line4"></div>
+                <p>We made it stupid simple <br /><code style={{color: "green"}}> Sign-UP. Fund-UP. Move money</code> </p>
+                <img src="/images/transfer.jpg" alt="wallet"></img>
+            </div>
+
+
         <div className="features-cards">
             <div className="feature">
                 <h2>Global Feature</h2>
@@ -118,47 +129,57 @@ function HomePage(){
                 <img alt="cloud security" src="/images/2FA.jpg" />
             </div> 
         </div> 
-        </section><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        </section>
 
         <section id="How-it-works">
+
+            <div className="followUp-head">
+                <div className="line"></div>
+                <h3>How-it-works</h3>
+            </div><br /><br /><br /><br />
+
             <div className="followUp-Header">
                 <h2>How it works</h2>
+                <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
+                <div className="line4"></div>
+                <p>We made it stupid simple <br /><code style={{color: "green"}}> Sign-UP. Fund-UP. Move money</code> </p>
+                <img src="/images/transfer.jpg" alt="wallet"></img>
             </div>
 
+        <div className="Card-content">
             <div className="followUp-content">
                 <h1>01</h1>
-                <pre><FaUserPlus />App signup</pre>
+                <pre><FaUserPlus /> App signup</pre><br />
                 <h2>Sign Up in Second</h2>
-                <p>One account.. Full access. <br /> Register with Phone aend Email <br /> and your are in. </p>
+                <p>One account.. Full access. <br /> Register with Phone aend Email <br /> and your are in.</p>
                 <div className="line1"></div>
-                <pre>No hidden fees, no stress</pre>
+                <span>Simple, Fast, and Free</span>
             </div>
 
             <div className="line2"></div>
 
              <div className="followUp-content">
                 <h1>02</h1>
-                <pre><FaWallet />Fund Wallet</pre>
+                <pre><FaWallet /> Fund Wallet</pre><br />
                 <h2>Power Up your Wallet</h2>
                 <p>Deposit Money instantly <br /> and watch your wallet<br /> Grow in real time </p>
                 <div className="line1"></div>
-                <pre>fast. reliable. Always ready</pre>
+                <span>fast. reliable. Always ready</span>
             </div>
 
              <div className="line2"></div>
 
              <div className="followUp-content">
                 <h1>03</h1>
-                <pre><FaPaperPlane />Send & Receive</pre>
+                <pre><FaPaperPlane /> Send & Receive</pre><br />
                 <h2>Move Money Freely</h2>
                 <p>Transfer to anyone <br /> Receive from anywhere  <br /> withdraw with your pin. </p>
                 <div className="line1"></div>
-                <pre>No hidden fees, no stress</pre>
+                <span>No hidden fees, no stress</span>
             </div>
-
-
-        </section>
-        <section id="about"></section>
+        </div>
+    </section>
+        <section id="about">dsvfugbfdszlsdfwru buf bvudbf d hbrb  dhs vbs  sdbhcj sdfbrf </section>
         </>
 
     )

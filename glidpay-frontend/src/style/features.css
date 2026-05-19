@@ -85,6 +85,18 @@
     letter-spacing: 0.08em;
     font-size: 18px;
 }
+.feature pre{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: #413e46;
+    height: 20px;
+    border-radius: 10px;
+    color: aliceblue;
+}
 
 .features-cards {
     display: flex;
@@ -118,4 +130,10 @@
 .features .feature p,
 .features .feature pre {
     margin: 0;
+}
+.feature-Head{
+    background: #287dfc;
+    width: 101%;
+    border-radius: 20px;
+    overflow: hidden;
 }
