@@ -59,7 +59,7 @@ function HomePage(){
 
 
         <motion.div className="features-cards"  variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2}}>
-            <div className="feature">
+            <div className="feature" varian>
                 <h2>Global Feature</h2>
                 <p>Send and receive money instantly across countries,<br /> with fast processing and real-time transaction update</p>
                 <pre>Real-time transfer</pre>
