@@ -3,7 +3,33 @@ import "../style/features.css";
 import "../style/security.css";
 import "../style/How-it-works.css";
 import { FaUserPlus, FaWallet, FaPaperPlane } from "react-icons/fa";
+import { motion } from "framer-motion";
 function HomePage(){
+
+    //Variants 
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition:{
+                staggerChildren: 0.2
+            }
+        }
+    }
+
+    const cardVariants = {
+        hidden:{
+            opacity: 0,
+            y: 60
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    }
     return(
         <>
 <section id="home"> 
@@ -23,7 +49,6 @@ function HomePage(){
             <div className="line"></div>
             <h3>feature</h3>
         </div>
-
      <div className="feature-Head">
                 <h2>How it works</h2>
                 <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
@@ -33,7 +58,7 @@ function HomePage(){
             </div>
 
 
-        <div className="features-cards">
+        <motion.div className="features-cards"  variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2}}>
             <div className="feature">
                 <h2>Global Feature</h2>
                 <p>Send and receive money instantly across countries,<br /> with fast processing and real-time transaction update</p>
@@ -73,7 +98,7 @@ function HomePage(){
                 <pre>High-Safety</pre>
                 <pre>Fraud Detection</pre>
             </div>
-        </div>
+        </motion.div>
     </div>
 </section>
 
