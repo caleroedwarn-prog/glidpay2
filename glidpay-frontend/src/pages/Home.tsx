@@ -27,9 +27,9 @@ function HomePage(){
      <div className="feature-Head">
                 <h2>How it works</h2>
                 <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
-                <div className="line4"></div>
-                <p>We made it stupid simple <br /><code style={{color: "green"}}> Sign-UP. Fund-UP. Move money</code> </p>
-                <img src="/images/transfer.jpg" alt="wallet"></img>
+                <div className="line5"></div>
+                <p>We made it stupid simple <br /><code> Sign-UP. Fund-UP. Move money</code> </p>
+                <img src="/images/magazine.jpg" alt="wallet"></img>
             </div>
 
 
@@ -84,48 +84,52 @@ function HomePage(){
         <h3>Security</h3>
     </div>
         <div className="security-header">
-            <div className="security-copy">
-                <h2>Bank-Grade Security to Protect what Matters</h2>
-                <p>GlidPay uses advanced protection systems, <br /> encrypted infrastructure, device verification, <br /> and multiple authentication layers to keep your <br /> money and personal information secure</p>
-                <span>Learn more-</span>
-                <img alt="security illustration" src="/images/lock.jpg" />
+            <div className="security-header-content">
+                <div className="security-copy">
+                    <h2>Bank-Grade Security to Protect what Matters</h2>
+                    <p>GlidPay uses advanced protection systems, <br /> encrypted infrastructure, device verification, <br /> and multiple authentication layers to keep your <br /> money and personal information secure</p>
+                    <span>Learn more-</span>
+                </div>
+                <div className="security-header-image">
+                    <img alt="security illustration" src="/images/lock.jpg" />
+                </div>
             </div>
         </div>
         
         <div className="security-features">
             <div className="security">
                 <h2><pre>End-to-End Encryption</pre></h2>
-                <pre>Your data and transactions are fully encrypted and securely protected</pre>
+                <pre>Your data and transactions are fully<br /> encrypted and securely protected</pre>
                 <img alt="encryption-illustration" src="/images/encription.jpg" />
             </div>
         
             <div className="security">
                 <h2><pre>Secret Key Protection</pre></h2>
-                <pre>Sensitive actions require your personal secret authorization key</pre>
+                <pre>Sensitive actions require your personal<br /> secret authorization key</pre>
                 <img alt="secret key" src="/images/key.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Two-Factor Authentication</pre></h2>
-                <pre>Add an extra layer of protection to your account login and transactions</pre>
+                <pre>Add an extra layer of protection to<br /> your account login and<br /> transactions</pre>
                 <img alt="two factor authenticator" src="/images/2 factor Authentication.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Real-Time Fraud Monitoring</pre></h2>
-                <pre>Suspicious activities are detected instantly to prevent unauthorized access</pre>
+                <pre>Suspicious activities are detected <br />instantly to prevent unauthorized<br /> access</pre>
                 <img alt="Fraud detecttion" src="/images/anit-fraud.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Device Verification</pre></h2>
-                <pre>Only trusted devices can securely access your GlidPay account</pre>
+                <pre>Only trusted devices can securely<br /> access your GlidPay account</pre>
                 <img alt="2FA" src="/images/security.jpg" />
             </div>
 
             <div className="security">
                 <h2><pre>Secure Cloud Infrastructure</pre></h2>
-                <pre>Modern cloud systems ensure reliability, uptime, and secure transaction processing</pre>
+                <pre>Modern cloud systems ensure reliability,<br /> uptime, and secure transaction<br /> processing</pre>
                 <img alt="cloud security" src="/images/2FA.jpg" />
             </div> 
         </div> 
@@ -179,7 +183,36 @@ function HomePage(){
             </div>
         </div>
     </section>
-        <section id="about">dsvfugbfdszlsdfwru buf bvudbf d hbrb  dhs vbs  sdbhcj sdfbrf </section>
+        <section id="about">
+            <div className="about-section">
+                <div className="about-copy">
+                    <h2>About GlidPay</h2>
+                    <p>GlidPay is your global payments partner, giving you fast, secure, and easy access to money anywhere in the world. We help individuals and businesses move money simply, safely, and with total confidence.</p>
+                </div>
+                <div className="footer-links">
+                    <div>
+                        <h3>Quick links</h3>
+                        <a href="#home">Home</a>
+                        <a href="#features">Features</a>
+                        <a href="#Security">Security</a>
+                    </div>
+                    <div>
+                        <h3>Support</h3>
+                        <a href="#How-it-works">How it works</a>
+                        <a href="#about">About</a>
+                        <a href="mailto:support@glidpay.com">Contact us</a>
+                    </div>
+                    <div>
+                        <h3>Contact</h3>
+                        <p>support@glidpay.com</p>
+                        <p>+1 (800) 123-4567</p>
+                    </div>
+                </div>
+                <div className="site-footer">
+                    <p>© 2026 GlidPay. Secure payments made simple.</p>
+                </div>
+            </div>
+        </section>
         </>
 
     )
