@@ -40,7 +40,7 @@ function HomePage(){
         <div className="Features-header-copy">
             <p>Powerful Financial Features built for the Modern World</p>
             <p>GlidPay gives you a fast, secure, and simple way<br />to send, receive, store, and manage money globally<br />anytime and anywhere</p>
-            <span><Link to="/register">-Get STARTED </Link>| Download App</span>
+            <span><nav></nav><Link to="/register">-Get STARTED </Link>| Download App</span>
         </div>
     </div></section>
         
