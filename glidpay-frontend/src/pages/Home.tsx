@@ -4,6 +4,7 @@ import "../style/security.css";
 import "../style/How-it-works.css";
 import { FaUserPlus, FaWallet, FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 function HomePage(){
 
     //Variants 
@@ -14,7 +15,7 @@ function HomePage(){
                 staggerChildren: 0.2
             }
         }
-    }
+    } as const
 
     const cardVariants = {
         hidden:{
@@ -26,7 +27,7 @@ function HomePage(){
             y: 0,
             transition: {
                 duration: 0.6,
-                ease: "easeOut"
+                ease: "easeOut" as const
             }
         }
     }
@@ -39,7 +40,7 @@ function HomePage(){
         <div className="Features-header-copy">
             <p>Powerful Financial Features built for the Modern World</p>
             <p>GlidPay gives you a fast, secure, and simple way<br />to send, receive, store, and manage money globally<br />anytime and anywhere</p>
-            <span>-Get STARTED | Download App</span>
+            <span><Link to="/register">-Get STARTED </Link>| Download App</span>
         </div>
     </div></section>
         
@@ -54,50 +55,50 @@ function HomePage(){
                 <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
                 <div className="line5"></div>
                 <p>We made it stupid simple <br /><code> Sign-UP. Fund-UP. Move money</code> </p>
-                <img src="/images/magazine.jpg" alt="wallet"></img>
+                <motion.img src="/images/magazine.jpg" alt="wallet" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
             </div>
 
 
         <motion.div className="features-cards"  variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2}}>
-            <div className="feature">
+            <motion.div className="feature" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2>Global Feature</h2>
                 <p>Send and receive money instantly across countries,<br /> with fast processing and real-time transaction update</p>
                 <pre>Real-time transfer</pre>
                 <pre>Fast confirmation</pre>
                 <pre>24/7 transaction</pre>
-            </div>
+            </motion.div>
 
-            <div className="feature">
+            <motion.div className="feature" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2>Multi-Currency Wallet</h2>
                 <p>Store and manage multple currencies in one secure<br/> wallet without needing multiple bank accounts</p>
                 <pre>Multiple currencies</pre>
                 <pre>Easy conversion</pre>
                 <pre>Global accessibility</pre>
-            </div>
+            </motion.div>
 
-            <div className="feature">
+            <motion.div className="feature" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2>Advanced Security</h2>
                 <p>Protect your funds using encrypted systems, <br /> secret key verification, and advance account security</p>
                 <pre>Encrypted Transaction</pre>
                 <pre>Secret Key Verification</pre>
                 <pre>Account Security</pre>
-            </div>
+            </motion.div>
 
-            <div className="feature">
+            <motion.div className="feature" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2>Mobile Banking</h2>
                 <p>Access your Wallet anytime through a smooth and secure mobile first experience</p>
                 <pre>Mobile App</pre>
                 <pre>Secure Access</pre>
                 <pre>Real-time Notifications</pre>
-            </div>
+            </motion.div>
 
-            <div className="feature">
+            <motion.div className="feature" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2>Secure Withdrawals</h2>
                 <p>Every transfer and withdrawal is protected with additional verification for maximum safety</p>
                 <pre>Two-Factor Authentication</pre>
                 <pre>High-Safety</pre>
                 <pre>Fraud Detection</pre>
-            </div>
+            </motion.div>
         </motion.div>
     </div>
 </section>
@@ -116,48 +117,48 @@ function HomePage(){
                     <span>Learn more-</span>
                 </div>
                 <div className="security-header-image">
-                    <img alt="security illustration" src="/images/lock.jpg" />
+                    <motion.img alt="security illustration" src="/images/lock.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
                 </div>
             </div>
         </div>
         
-        <div className="security-features">
-            <div className="security">
+        <motion.div className="security-features"  variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2}}>
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>End-to-End Encryption</pre></h2>
                 <pre>Your data and transactions are fully<br /> encrypted and securely protected</pre>
-                <img alt="encryption-illustration" src="/images/encription.jpg" />
-            </div>
+                <motion.img alt="encryption-illustration" src="/images/encription.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
+            </motion.div>
         
-            <div className="security">
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>Secret Key Protection</pre></h2>
                 <pre>Sensitive actions require your personal<br /> secret authorization key</pre>
-                <img alt="secret key" src="/images/key.jpg" />
-            </div>
+                <motion.img alt="secret key" src="/images/key.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
+            </motion.div>
 
-            <div className="security">
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>Two-Factor Authentication</pre></h2>
                 <pre>Add an extra layer of protection to<br /> your account login and<br /> transactions</pre>
-                <img alt="two factor authenticator" src="/images/2 factor Authentication.jpg" />
-            </div>
+                <motion.img alt="two factor authenticator" src="/images/2 factor Authentication.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
+            </motion.div>
 
-            <div className="security">
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>Real-Time Fraud Monitoring</pre></h2>
                 <pre>Suspicious activities are detected <br />instantly to prevent unauthorized<br /> access</pre>
-                <img alt="Fraud detecttion" src="/images/anit-fraud.jpg" />
-            </div>
+                <motion.img alt="Fraud detecttion" src="/images/anit-fraud.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
+            </motion.div>
 
-            <div className="security">
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>Device Verification</pre></h2>
                 <pre>Only trusted devices can securely<br /> access your GlidPay account</pre>
-                <img alt="2FA" src="/images/security.jpg" />
-            </div>
+                <motion.img alt="2FA" src="/images/security.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
+            </motion.div>
 
-            <div className="security">
+            <motion.div className="security" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h2><pre>Secure Cloud Infrastructure</pre></h2>
                 <pre>Modern cloud systems ensure reliability,<br /> uptime, and secure transaction<br /> processing</pre>
-                <img alt="cloud security" src="/images/2FA.jpg" />
-            </div> 
-        </div> 
+                <motion.img alt="cloud security" src="/images/2FA.jpg" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }}  />
+            </motion.div> 
+        </motion.div> 
         </section>
 
         <section id="How-it-works">
@@ -172,41 +173,41 @@ function HomePage(){
                 <p> A Guided way for geting you started<br /> from zero to transacting in less <br /> than 2 minutes</p>
                 <div className="line4"></div>
                 <p>We made it stupid simple <br /><code style={{color: "green"}}> Sign-UP. Fund-UP. Move money</code> </p>
-                <img src="/images/transfer.jpg" alt="wallet"></img>
+                <motion.img src="/images/transfer.jpg" alt="wallet" initial={{ scale: 1.1 }} whileHover={{ scale: 1.3 }} transition={{ duration: 0.4, ease: "easeOut" }} />
             </div>
 
-        <div className="Card-content">
-            <div className="followUp-content">
+        <motion.div className="Card-content"  variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2}}>
+            <motion.div className="followUp-content" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h1>01</h1>
                 <pre><FaUserPlus /> App signup</pre><br />
                 <h2>Sign Up in Second</h2>
                 <p>One account.. Full access. <br /> Register with Phone aend Email <br /> and your are in.</p>
                 <div className="line1"></div>
                 <span>Simple, Fast, and Free</span>
-            </div>
+            </motion.div>
 
             <div className="line2"></div>
 
-             <div className="followUp-content">
+             <motion.div className="followUp-content" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h1>02</h1>
                 <pre><FaWallet /> Fund Wallet</pre><br />
                 <h2>Power Up your Wallet</h2>
                 <p>Deposit Money instantly <br /> and watch your wallet<br /> Grow in real time </p>
                 <div className="line1"></div>
                 <span>fast. reliable. Always ready</span>
-            </div>
+            </motion.div>
 
              <div className="line2"></div>
 
-             <div className="followUp-content">
+             <motion.div className="followUp-content" variants={cardVariants} whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(147, 51, 234, 0.5)" }}>
                 <h1>03</h1>
                 <pre><FaPaperPlane /> Send & Receive</pre><br />
                 <h2>Move Money Freely</h2>
                 <p>Transfer to anyone <br /> Receive from anywhere  <br /> withdraw with your pin. </p>
                 <div className="line1"></div>
                 <span>No hidden fees, no stress</span>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     </section>
         <section id="about">
             <div className="about-section">
