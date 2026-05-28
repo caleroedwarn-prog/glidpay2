@@ -1,7 +1,12 @@
+import { useState } from "react";
 import "../style/Dashboard.css";
 import { IoNotifications } from "react-icons/io5";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 function DashboardPage(){
-
+    const [isShow, setIsShow] = useState(false);
+    const toggleBalance = () => {
+        setIsShow(!isShow)
+    }
     return(
         <>
         <div className="borderBox">
@@ -19,6 +24,16 @@ function DashboardPage(){
                             <img src="/images/key.jpg" alt="profile" />
                         </div>
                     </div>
+                </div>
+
+                <div className="Balance">
+                    <h2>Total Balance</h2>
+                    <p>Balance:
+                       {isShow? "2038" : "*********"}
+                    </p>
+                    <button className="toggle-btn" onClick={toggleBalance}>
+                        { isShow ? <AiOutlineEye size={22} color="white" /> : <AiOutlineEyeInvisible size={22} color="white" /> }
+                    </button>
                 </div>
             </div>
         </div>
