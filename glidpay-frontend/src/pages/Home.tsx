@@ -5,6 +5,7 @@ import "../style/How-it-works.css";
 import { FaUserPlus, FaWallet, FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 function HomePage(){
 
     //Variants 
@@ -33,6 +34,7 @@ function HomePage(){
     }
     return(
         <>
+        <Navbar />
 <section id="home"> 
 
      <div className="Features-header">
