@@ -1,13 +1,14 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .borderBox{
     position: relative;
     top: 1px;
     border: 1px solid #000;
     width: 50%;
-    height: 100vh;
+    height: 120vh;
     margin: 1% 1% 1% 23%;
     border-radius: 15px;
     overflow: hidden;
@@ -15,8 +16,8 @@ body{
 .boxShape{
     background: rgb(61, 19, 61);
     min-height: 55vh;
-    border-bottom-right-radius: 30%;
-    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%;
     border-bottom: 11px solid transparent;
     background: 
     linear-gradient(#16093A, #16093A) padding-box,
@@ -27,6 +28,7 @@ body{
     inset 0 1px 0 rgba(255, 255, 255, 0.1)
      ;
     padding: 20px 30px;
+    overflow: hidden;
 }
 .topBar {
     display: flex;
@@ -39,12 +41,13 @@ body{
     height: 52px;
 }
 .bar-logo img {
-    width: 100%;
+    width: 105%;
     height: 100%;
+    padding: 0px 0px 0px 25px;
     object-fit: contain;
     filter: brightness(2);
     border-radius: 24px;
-    box-shadow: 0 0 40px rgba(147, 51, 234, 0.5);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.2);
 }
 .top-actions {
     display: flex;
@@ -77,8 +80,80 @@ body{
 }
 .profile-img img{
     background: #C084FC;
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     overflow: hidden;
+}
+.Balance{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;
+}
+.error p{
+    position: relative;
+    color: #fc0b0b;
+    top: 20px;
+    left: 37%;
+}
+
+.Balance pre{
+    color: #fff;
+    font-size: 25px;
+}
+.header{
+    margin-top: 20px;
+    color: #7a6b91;
+}
+.toggle-btn{
+    background: transparent;
+    border: none;
+}
+.transaction_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: #5d3d7a;
+    height: 20vh;
+    border-radius: 30px;
+    position: relative;
+    top: 30px;
+    overflow: hidden;
+}
+.content_type, .content_type1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    border: 2px solid violet;
+    background: none;
+    height: 45px;
+    width: 20%;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+.content_type1{
+    background-color: #877994;
+}
+.buttom_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: #5d3d7a;
+    height: 10vh;
+    width: 40vw;
+    border-radius: 20px;
+    position: relative;
+    top: 45%;
+    overflow: hidden;
+    left: 58px;
 }
