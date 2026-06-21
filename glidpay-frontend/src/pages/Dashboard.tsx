@@ -11,12 +11,16 @@ import {
 import { motion } from "framer-motion"
 import { getBalance } from "../api/wallet";
 import { useAuth } from "../hooks/useAuth";
+import WithdrawPage from "./withdraw";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
   const [balance, setBalance] = useState<number>(0);
   const [showBalance, setShowBalance] = useState(true);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBalanceData = async () => {
@@ -117,11 +121,11 @@ const Dashboard = () => {
             </span>
             <span className="dashboard__action-label">Deposit</span>
           </button>
-          <button className="dashboard__action-btn dashboard__action-btn--withdraw">
+          <button onClick={() => navigate("/withdraw")} className="dashboard__action-btn dashboard__action-btn--withdraw">
             <span className="dashboard__action-icon">
               <FiArrowUpCircle size={24} />
             </span>
-            <span className="dashboard__action-label">Withdraw</span>
+            <span className="dashboard__action-label" >Withdraw</span>
           </button>
           <button className="dashboard__action-btn dashboard__action-btn--transfer">
             <span className="dashboard__action-icon">

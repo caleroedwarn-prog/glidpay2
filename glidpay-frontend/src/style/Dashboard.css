@@ -383,4 +383,7 @@
   border-top: 3px solid #9333EA;
   border-radius: 50%;
 }
+.dashboard__action-label-link{
+  text-decoration: none;
+}
 
