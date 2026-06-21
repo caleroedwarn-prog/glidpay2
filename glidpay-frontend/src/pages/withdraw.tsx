@@ -1,9 +1,10 @@
 import { type WithdrawRequest } from "../types/wallet";
 import { withdraw } from "../api/wallet";
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
+import "../style/withdraw.css";
+import { FaTimes, FaCreditCard, FaMobileAlt, FaSpinner, FaExclamationCircle, FaCheckCircle, FaMoneyBillWave } from "react-icons/fa";
 
 
 
@@ -31,6 +32,15 @@ const [error, setError] = useState<string>("")
 const [success, setSuccess] = useState<string>("")
 const [isLoading, setIsLoading] = useState<boolean>(false)
 
+const handleCardNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "")
+
+    value = value.substring(0, 16)
+
+    const formattedValue = value.replace(/(\d{4})(?=\d)/g, "$1 ")
+    setCardNumber(formattedValue)
+
+}
 // Validate card number (luhn Algorithm)
 const isValidCardNumber = (number: string): boolean => {
     const cleaned = number.replace(/\s/g, "")
@@ -53,6 +63,20 @@ const isValidCardNumber = (number: string): boolean => {
     return sum % 10 === 0
 
 }
+const handleExpiryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "") // Remove all non-digits
+    
+    if (value.length > 4) {
+        value = value.slice(0, 4) // Limit to 4 digits (MMYY)
+    }
+    
+    // Format as MM/YY
+    if (value.length > 2) {
+        value = value.slice(0, 2) + "/" + value.slice(2)
+    }
+    
+    setExpiry(value)
+}
 
 // Validate Expiry date (MM/YY format + not expired )
 const isValidExpiry = (value: string): boolean => {
@@ -68,6 +92,12 @@ const isValidExpiry = (value: string): boolean => {
     const expiryDate = new Date(year, month)
 
     return expiryDate > now
+}
+
+const handleCvvChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, "")
+    value = value.substring(0, 4)
+    setCvv(value)
 }
 
 // validate CVV
@@ -95,7 +125,7 @@ const handleSubmit  = async() =>{
         return
     }
     // Method specific Validation
-    if(selectedMethod === "Card"){
+    if(selectedMethod === "card"){
 
         if(!isValidCardNumber(cardNumber)){
             setError("Enter a valid card number")
@@ -109,6 +139,7 @@ const handleSubmit  = async() =>{
 
         if(!isvalidCVV(cvv)){
             setError("Enter valid cvv")
+            return
         }
     }
         if(selectedMethod === "momo" || selectedMethod === "orange"){
@@ -132,8 +163,20 @@ const handleSubmit  = async() =>{
         }
         const response = await withdraw(body)
         setSuccess(response.message)
+        
+        // Clear form and close modal after 2 seconds on success
+        setTimeout(() => {
+            setSelectedMethod("")
+            setAmount(0)
+            setPin("")
+            setCardNumber("")
+            setExpiry("")
+            setCvv("")
+            setPhoneNumber("")
+            setSuccess("")
+        }, 2500)
     }catch {
-        setError("withdrawal failed, check details and try again")
+        setError("Withdrawal failed, check details and try again")
     }finally{
         setIsLoading(false)
     }
@@ -152,13 +195,16 @@ const handleSubmit  = async() =>{
 
         <div className="Withdrawal_Method-container">
             <div className="withdrawal_method-selection">
-                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("card")}>
+                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("card")} title="Withdraw with Card">
+                    <FaCreditCard size={24} />
                     Card
                 </button>
-                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("momo")}>
+                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("momo")} title="Withdraw with Mobile Money">
+                    <FaMobileAlt size={24} />
                     Momo
                 </button>
-                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("orange")}>
+                <button className="withdrawal_method-btn" onClick={() => setSelectedMethod("orange")} title="Withdraw with Orange Money">
+                    <FaMoneyBillWave size={24} />
                     Orange Money
                 </button>
             </div>
@@ -188,6 +234,38 @@ const handleSubmit  = async() =>{
                         />
                     </div>
 
+                    {/* Card Preview Section */}
+                    {selectedMethod === "card" && (
+                        <div className="card-preview-section">
+                            <div className="card-preview">
+                                <div className="card-preview-chip">
+                                    <div className="chip-pattern"></div>
+                                </div>
+                                <div className="card-preview-logo">
+                                    <span>VISA</span>
+                                </div>
+                                <div className="card-preview-number">
+                                    {cardNumber ? (
+                                        cardNumber.replace(/\s/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19)
+                                    ) : (
+                                        '•••• •••• •••• ••••'
+                                    )}
+                                </div>
+                                <div className="card-preview-details">
+                                    <div className="cardholder">
+                                        <span className="label">Card Holder</span>
+                                        <span className="value">YOUR NAME</span>
+                                    </div>
+                                    <div className="card-expiry">
+                                        <span className="label">Expires</span>
+                                        <span className="value">{expiry || 'MM/YY'}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className="card-preview-hint">👆 Add your card details below</p>
+                        </div>
+                    )}
+
                     {/* Card Inputs */}
                     {selectedMethod === "card" && (
                     <div className="Card_selectecMethod-input">
@@ -196,7 +274,7 @@ const handleSubmit  = async() =>{
                             type="text"
                             placeholder="Card Number"
                             value={cardNumber}
-                            onChange={(e) => setCardNumber(e.target.value)} 
+                            onChange={handleCardNumberChange} 
                             />
 
                             <label htmlFor="expiry">Expiry Date</label>
@@ -204,7 +282,7 @@ const handleSubmit  = async() =>{
                             type="text"
                             placeholder="MM/YY"
                             value={expiry}
-                            onChange={(e) => setExpiry(e.target.value)}
+                            onChange={handleExpiryChange}
                             />
 
                             <label htmlFor="cvv">CVV</label>
@@ -212,7 +290,7 @@ const handleSubmit  = async() =>{
                             type="text"
                             placeholder="123"
                             value={cvv}
-                            onChange={(e) => setCvv(e.target.value)}
+                            onChange={handleCvvChange}
                             />
                         </div>
                         )}
@@ -252,8 +330,18 @@ const handleSubmit  = async() =>{
                         value={pin}
                         onChange={(e) => setPin(e.target.value)}
                         />
-                        {error && <span className="error-message">{error}</span>}
-                        {success && <span className="success-message">{success}</span>}
+                        {error && (
+                            <span className="error-message">
+                                <FaExclamationCircle size={18} />
+                                {error}
+                            </span>
+                        )}
+                        {success && (
+                            <span className="success-message">
+                                <FaCheckCircle size={18} />
+                                {success}
+                            </span>
+                        )}
                     </div>
 
                     <div className="Submit_Withdrawal">
@@ -261,14 +349,56 @@ const handleSubmit  = async() =>{
                         className="Submit-btn"
                         onClick={handleSubmit}
                         disabled={isLoading}
+                        title={isLoading ? "Processing..." : "Withdraw Funds"}
                         >
-                            {isLoading ?
-                            <div className="Loading-btn">loading...</div> : <div className="Submit-btn-text">Withdraw</div>}
+                            {isLoading ? (
+                                <div className="Loading-btn">
+                                    <FaSpinner className="loading-spinner" size={20} />
+                                    Processing...
+                                </div>
+                            ) : (
+                                <div className="Submit-btn-text">Withdraw</div>
+                            )}
                         </button>
                     </div>
                 </div>
             </div>
 
+        )}
+
+        {success && (
+            <div className="success-modal-overlay">
+                <div className="success-modal-content">
+                    <div className="success-icon-wrapper">
+                        <FaCheckCircle size={80} className="success-icon-animated" />
+                    </div>
+                    <h2>Withdrawal Successful!</h2>
+                    <p>{success}</p>
+                    <div className="success-details">
+                        <div className="detail-item">
+                            <span className="detail-label">Amount:</span>
+                            <span className="detail-value">${amount.toFixed(2)}</span>
+                        </div>
+                        <div className="detail-item">
+                            <span className="detail-label">Method:</span>
+                            <span className="detail-value">
+                                {selectedMethod === "card" && "Credit Card"}
+                                {selectedMethod === "momo" && "Mobile Money (MTN)"}
+                                {selectedMethod === "orange" && "Orange Money"}
+                            </span>
+                        </div>
+                    </div>
+                    <button 
+                        className="success-close-btn"
+                        onClick={() => {
+                            setSuccess("")
+                            navigate("/dashboard")
+                        }}
+                    >
+                        Return to Dashboard
+                    </button>
+                </div>
+            </div>
         )}
 
         </>

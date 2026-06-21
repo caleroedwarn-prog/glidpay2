@@ -1,0 +1,1005 @@
+/* ==================== WITHDRAW PAGE STYLING ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.withdrawal_dashboard_page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4c63d2 100%);
+    padding: 2rem 1.5rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.withdrawal_header {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+}
+
+.withdrawal_header button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.withdrawal_header button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.withdrawal_header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.withdrawal_subtitle {
+    display: block;
+    font-size: 1rem;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+/* Method Selection Container */
+.Withdrawal_Method-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.withdrawal_method-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.withdrawal_method-btn {
+    background: white;
+    border: 3px solid transparent;
+    padding: 2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.withdrawal_method-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.withdrawal_method-btn:hover::before {
+    left: 100%;
+}
+
+.withdrawal_method-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Button */
+.withdrawal_method-btn:nth-child(1) {
+    color: #4c63d2;
+    border-color: #4c63d2;
+}
+
+.withdrawal_method-btn:nth-child(1):hover {
+    background: linear-gradient(135deg, #4c63d2 0%, #e63946 100%);
+    color: white;
+    border-color: transparent;
+}
+
+/* Momo Button */
+.withdrawal_method-btn:nth-child(2) {
+    color: #ffc300;
+    border-color: #ffc300;
+}
+
+.withdrawal_method-btn:nth-child(2):hover {
+    background: linear-gradient(135deg, #ffc300 0%, #333333 100%);
+    color: white;
+    border-color: transparent;
+}
+
+/* Orange Money Button */
+.withdrawal_method-btn:nth-child(3) {
+    color: #ff9f1c;
+    border-color: #ff9f1c;
+}
+
+.withdrawal_method-btn:nth-child(3):hover {
+    background: linear-gradient(135deg, #ff9f1c 0%, #000000 100%);
+    color: white;
+    border-color: transparent;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: overlayFadeIn 0.3s ease;
+    padding: 1.5rem;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-box {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #f0f0f0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: #e0e0e0;
+    transform: rotate(90deg);
+    color: #000;
+}
+
+.modal-box h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Form Inputs Styling */
+.General_Form-input,
+.Card_selectecMethod-input,
+.MobileMoney_selectedMethod-input,
+.OrangeMoney_selectedMethod-input,
+.Shared_pin-input {
+    margin-bottom: 1.5rem;
+}
+
+.General_Form-input label,
+.Card_selectecMethod-input label,
+.MobileMoney_selectedMethod-input label,
+.OrangeMoney_selectedMethod-input label,
+.Shared_pin-input label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.General_Form-input input,
+.Card_selectecMethod-input input,
+.MobileMoney_selectedMethod-input input,
+.OrangeMoney_selectedMethod-input input,
+.Shared_pin-input input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    font-family: inherit;
+}
+
+.General_Form-input input:focus,
+.Card_selectecMethod-input input:focus,
+.MobileMoney_selectedMethod-input input:focus,
+.OrangeMoney_selectedMethod-input input:focus,
+.Shared_pin-input input:focus {
+    outline: none;
+    background: white;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.General_Form-input input::placeholder,
+.Card_selectecMethod-input input::placeholder,
+.MobileMoney_selectedMethod-input input::placeholder,
+.OrangeMoney_selectedMethod-input input::placeholder,
+.Shared_pin-input input::placeholder {
+    color: #aaa;
+}
+
+/* Card Method Specific */
+.Card_selectecMethod-input {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(76, 99, 210, 0.05) 0%, rgba(230, 57, 70, 0.05) 100%);
+    border-radius: 16px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.Card_selectecMethod-input label {
+    color: #4c63d2;
+}
+
+/* Momo Method Specific */
+.MobileMoney_selectedMethod-input {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 195, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 195, 0, 0.2);
+}
+
+.MobileMoney_selectedMethod-input label {
+    color: #ffc300;
+}
+
+/* Orange Money Method Specific */
+.OrangeMoney_selectedMethod-input {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 159, 28, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 159, 28, 0.2);
+}
+
+.OrangeMoney_selectedMethod-input label {
+    color: #ff9f1c;
+}
+
+/* PIN Input */
+.Shared_pin-input {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 16px;
+    border: 2px solid #e8e8e8;
+}
+
+.Shared_pin-input label {
+    color: #555;
+}
+
+.Shared_pin-input input {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+/* Error and Success Messages */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e63946;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    animation: slideInError 0.4s ease;
+}
+
+.success-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #06a77d;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    animation: slideInSuccess 0.4s ease;
+}
+
+@keyframes slideInError {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInSuccess {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Submit Button */
+.Submit_Withdrawal {
+    margin-top: 2.5rem;
+}
+
+.Submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.Submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.6s;
+}
+
+.Submit-btn:hover::before {
+    left: 100%;
+}
+
+/* Card Button - Submit */
+.modal-box:has(.Card_selectecMethod-input) .Submit-btn {
+    background: linear-gradient(135deg, #4c63d2 0%, #e63946 100%);
+}
+
+.modal-box:has(.Card_selectecMethod-input) .Submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(76, 99, 210, 0.3);
+}
+
+/* Momo Button - Submit */
+.modal-box:has(.MobileMoney_selectedMethod-input) .Submit-btn {
+    background: linear-gradient(135deg, #ffc300 0%, #333333 100%);
+}
+
+.modal-box:has(.MobileMoney_selectedMethod-input) .Submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 195, 0, 0.4);
+}
+
+/* Orange Money Button - Submit */
+.modal-box:has(.OrangeMoney_selectedMethod-input) .Submit-btn {
+    background: linear-gradient(135deg, #ff9f1c 0%, #000000 100%);
+}
+
+.modal-box:has(.OrangeMoney_selectedMethod-input) .Submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 159, 28, 0.4);
+}
+
+.Submit-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.Submit-btn-text {
+    z-index: 1;
+}
+
+/* Loading Button */
+.Loading-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 1;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .withdrawal_dashboard_page {
+        padding: 1.5rem 1rem;
+    }
+
+    .withdrawal_header h2 {
+        font-size: 2rem;
+    }
+
+    .withdrawal_subtitle {
+        font-size: 0.95rem;
+    }
+
+    .Withdrawal_Method-container {
+        padding: 0 1rem;
+    }
+
+    .withdrawal_method-selection {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .withdrawal_method-btn {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .modal-box {
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 90%;
+    }
+
+    .modal-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .General_Form-input,
+    .Card_selectecMethod-input,
+    .MobileMoney_selectedMethod-input,
+    .OrangeMoney_selectedMethod-input,
+    .Shared_pin-input {
+        margin-bottom: 1.2rem;
+    }
+
+    .Submit_Withdrawal {
+        margin-top: 2rem;
+    }
+
+    .Submit-btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .withdrawal_header {
+        padding: 0;
+    }
+
+    .withdrawal_header h2 {
+        font-size: 1.75rem;
+    }
+
+    .withdrawal_subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .modal-overlay {
+        padding: 1rem;
+    }
+
+    .modal-box {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .modal-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal-close-btn {
+        width: 36px;
+        height: 36px;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .General_Form-input input,
+    .Card_selectecMethod-input input,
+    .MobileMoney_selectedMethod-input input,
+    .OrangeMoney_selectedMethod-input input,
+    .Shared_pin-input input {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+    }
+
+    .Shared_pin-input input {
+        font-size: 1.2rem;
+    }
+
+    .Submit-btn {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Scrollbar Styling */
+.modal-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
+
+/* ==================== CARD PREVIEW SECTION ==================== */
+
+.card-preview-section {
+    margin: 2rem 0;
+    animation: fadeIn 0.5s ease;
+}
+
+.card-preview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4c63d2 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.586 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.card-preview::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.card-preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+}
+
+.card-preview-chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    border-radius: 8px;
+    padding: 4px;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chip-pattern {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    border-radius: 4px;
+}
+
+.card-preview-logo {
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-preview-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    word-spacing: 0.5rem;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-preview-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardholder,
+.card-expiry {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardholder .label,
+.card-expiry .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.cardholder .value,
+.card-expiry .value {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-preview-hint {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* ==================== RESPONSIVE CARD PREVIEW ==================== */
+
+@media (max-width: 768px) {
+    .card-preview {
+        padding: 1.5rem;
+        aspect-ratio: 1.6 / 1;
+    }
+
+    .card-preview-chip {
+        width: 45px;
+        height: 35px;
+    }
+
+    .card-preview-logo {
+        font-size: 1.5rem;
+    }
+
+    .card-preview-number {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-preview {
+        padding: 1.2rem;
+        aspect-ratio: 1.586 / 1;
+        border-radius: 16px;
+    }
+
+    .card-preview-chip {
+        width: 40px;
+        height: 32px;
+    }
+
+    .card-preview-logo {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .card-preview-number {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        word-spacing: 0.25rem;
+    }
+
+    .cardholder .label,
+    .card-expiry .label {
+        font-size: 0.6rem;
+    }
+
+    .cardholder .value,
+    .card-expiry .value {
+        font-size: 0.9rem;
+    }
+
+    .card-preview-hint {
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+    }
+}
+
+/* ==================== SUCCESS MODAL STYLING ==================== */
+
+.success-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: overlayFadeIn 0.3s ease;
+    padding: 1.5rem;
+}
+
+.success-modal-content {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    animation: successModalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.success-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #06a77d 0%, #10c876 100%);
+}
+
+@keyframes successModalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.success-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, rgba(6, 168, 125, 0.1) 0%, rgba(16, 200, 118, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    animation: successIconPulse 0.6s ease-out;
+}
+
+.success-icon-animated {
+    color: #06a77d;
+    animation: successIconBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes successIconPulse {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes successIconBounce {
+    0% {
+        transform: scale(0) rotate(-30deg);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.success-modal-content h2 {
+    font-size: 2rem;
+    color: #06a77d;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.success-modal-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.success-details {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    border: 1px solid #e8e8e8;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #999;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.success-close-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #06a77d 0%, #10c876 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(6, 168, 125, 0.3);
+}
+
+.success-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(6, 168, 125, 0.4);
+}
+
+.success-close-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Success Modal */
+@media (max-width: 480px) {
+    .success-modal-content {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .success-icon-wrapper {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1.5rem;
+    }
+
+    .success-icon-animated {
+        width: 60px;
+        height: 60px;
+    }
+
+    .success-modal-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .success-modal-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .success-details {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .detail-label {
+        font-size: 0.9rem;
+    }
+
+    .detail-value {
+        font-size: 0.95rem;
+    }
+
+    .success-close-btn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+}
