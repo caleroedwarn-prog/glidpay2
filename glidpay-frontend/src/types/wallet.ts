@@ -19,7 +19,12 @@ export type DepositeRequest = {
 
 export type WithdrawRequest = {
     amount: number;
-    pin: string
+    pin: string;
+    method: string;
+    expiry?: string;
+    cvv?: string;
+    phoneNumber?: string;
+    provider?: string;
 }
 
 export type TransferRequest = {
