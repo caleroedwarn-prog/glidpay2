@@ -11,7 +11,6 @@ import {
 import { motion } from "framer-motion"
 import { getBalance } from "../api/wallet";
 import { useAuth } from "../hooks/useAuth";
-import WithdrawPage from "./withdraw";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
@@ -115,7 +114,7 @@ const Dashboard = () => {
       <section className="dashboard__actions">
         <h2 className="dashboard__section-title">Quick Actions</h2>
         <div className="dashboard__actions-grid">
-          <button className="dashboard__action-btn dashboard__action-btn--deposit">
+          <button className="dashboard__action-btn dashboard__action-btn--deposit" onClick={() => navigate("/deposit")}>
             <span className="dashboard__action-icon">
               <FiArrowDownCircle size={24} />
             </span>

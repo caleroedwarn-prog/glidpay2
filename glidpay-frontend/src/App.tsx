@@ -3,9 +3,9 @@ import LoginPage from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import RegisterPage from './pages/Registers';
 import HomePage from './pages/Home';
-import ProtectedRoute from './components/ProtectedRoute'
 import Features from './contents/Features';
 import WithdrawPage from './pages/withdraw';
+import DepositePage from './pages/deposite';
 
 function App() {
   return (
@@ -18,6 +18,8 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/withdraw" element={<WithdrawPage />} />
+        <Route path="/deposit" element={<DepositePage />} />
+
       </Routes>
     </BrowserRouter>
   );

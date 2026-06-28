@@ -16,6 +16,10 @@ export type TransactionList = Transaction[]
 export type DepositeRequest = {
     amount: number;
     method: string;
+    expiry?: string;
+    cvv?: string;
+    phoneNumber?: string;
+    provider?: string;
 }
 
 export type WithdrawRequest = {
