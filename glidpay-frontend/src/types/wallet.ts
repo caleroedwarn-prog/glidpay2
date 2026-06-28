@@ -15,6 +15,7 @@ export type TransactionList = Transaction[]
 
 export type DepositeRequest = {
     amount: number;
+    method: string;
 }
 
 export type WithdrawRequest = {
