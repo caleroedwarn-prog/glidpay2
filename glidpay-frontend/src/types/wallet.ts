@@ -36,6 +36,7 @@ export type TransferRequest = {
     amount: number;
     recipient: string;
     pin: string;
+    message: string;
 }
 
 export type WalletResponse = {
