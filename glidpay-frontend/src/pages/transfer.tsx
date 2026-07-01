@@ -70,7 +70,7 @@ const TransferPage = () => {
                 recipient
             }
             const response = await transfer(body);
-            setSuccesss(response.massage);
+            setSuccesss(response.message);
         }catch {
             setError("Transfer failed, please try again");
         }finally{
