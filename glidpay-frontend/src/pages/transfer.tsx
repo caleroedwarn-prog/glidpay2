@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { transfer } from "../api/wallet";
-import { TransferRequest } from "../types/wallet";
+import {type TransferRequest } from "../types/wallet";
 
 const TransferPage = () => {
 
@@ -67,7 +67,8 @@ const TransferPage = () => {
             const body: TransferRequest = {
                 amount,
                 pin,
-                recipient
+                recipient,
+                message: true
             }
             const response = await transfer(body);
             setSuccesss(response.message);
@@ -77,4 +78,8 @@ const TransferPage = () => {
             setLoading(false);
         }
     }
+
+    return (
+        
+    )
 }

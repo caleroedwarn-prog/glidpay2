@@ -36,10 +36,10 @@ export type TransferRequest = {
     amount: number;
     recipient: string;
     pin: string;
-    message: string;
+    message: boolean;
 }
 
 export type WalletResponse = {
-    message: string;
+    message: boolean;
     balance: number;
 }
