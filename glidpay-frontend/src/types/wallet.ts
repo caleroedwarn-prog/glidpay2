@@ -44,3 +44,13 @@ export type WalletResponse = {
     message: string;
     balance: number;
 }
+
+export type Transactions = {
+    id: number
+    type: string
+    amount: number
+    recipient: string
+    date: string
+    status: string
+
+}

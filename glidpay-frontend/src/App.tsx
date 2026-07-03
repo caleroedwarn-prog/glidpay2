@@ -7,6 +7,7 @@ import Features from './contents/Features';
 import WithdrawPage from './pages/withdraw';
 import DepositePage from './pages/deposite';
 import TransferPage from './pages/transfer';
+import HistoryPage from './pages/history';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Route path="/withdraw" element={<WithdrawPage />} />
         <Route path="/deposit" element={<DepositePage />} />
         <Route path="/transfer" element={<TransferPage />} />
-
+        <Route path="/history" element={<HistoryPage />} />
       </Routes>
     </BrowserRouter>
   );

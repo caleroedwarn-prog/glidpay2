@@ -73,7 +73,13 @@ const TransferPage = () => {
                 message: true
             }
             const response = await transfer(body);
-            setSuccesss(response.message);
+            if(response.message){
+               setSuccesss(true)
+            }else {
+                    setError("Deposit could not be completed. Please try again.");
+                    setLoading(false);
+                    return;
+                  }
         }catch {
             setError("Transfer failed, please try again");
         }finally{

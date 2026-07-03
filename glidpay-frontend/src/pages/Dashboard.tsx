@@ -132,7 +132,7 @@ const Dashboard = () => {
             </span>
             <span className="dashboard__action-label">Transfer</span>
           </button>
-          <button className="dashboard__action-btn dashboard__action-btn--history">
+          <button onClick={() => navigate("/history")} className="dashboard__action-btn dashboard__action-btn--history">
             <span className="dashboard__action-icon">
               <FiCreditCard size={24} />
             </span>
