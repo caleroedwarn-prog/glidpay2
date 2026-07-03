@@ -41,6 +41,6 @@ export type TransferRequest = {
 }
 
 export type WalletResponse = {
-    message: boolean;
+    message: string;
     balance: number;
 }

@@ -1,4 +1,4 @@
-import { type WithdrawRequest } from "../types/wallet";
+import { type WithdrawRequest} from "../types/wallet";
 import { withdraw } from "../api/wallet";
 import React, { useState } from "react";
 import { IoReturnUpBack } from "react-icons/io5";
@@ -163,7 +163,11 @@ const handleSubmit  = async() =>{
             ...(selectedMethod === "orange" && {phoneNumber, provider: "Orange"})
         }
         const response = await withdraw(body)
-        setSuccess(response.message)
+        if(response.message){
+            setSuccess(response.message)
+        } else {
+            setError("Withdrawal could not be completed. Please try again.")
+        }
         
         // Clear form and close modal after 2 seconds on success
         setTimeout(() => {
