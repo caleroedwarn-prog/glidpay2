@@ -659,6 +659,77 @@
     box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
 }
 
+/* Withdrawal helper messages */
+.withdrawal-helper-section {
+    margin: 2.5rem auto 0;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+}
+
+.withdrawal-helper-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.withdrawal-helper-card {
+    background: #ffffff08;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.withdrawal-helper-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(102, 126, 234, 0.35);
+    background: rgba(102, 126, 234, 0.08);
+}
+
+.withdrawal-helper-card .helper-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.withdrawal-helper-card h4 {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+    color: #ffffff;
+    line-height: 1.35;
+}
+
+.withdrawal-helper-card p {
+    margin: 0;
+    color: #d6d8e4;
+    line-height: 1.8;
+    font-size: 0.98rem;
+}
+
+.withdrawal-helper-card strong {
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .withdrawal-helper-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .withdrawal-helper-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 .card-preview-chip {
     width: 50px;
     height: 40px;

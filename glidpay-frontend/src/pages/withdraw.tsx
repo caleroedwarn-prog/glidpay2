@@ -210,6 +210,36 @@ const handleSubmit  = async() =>{
                 </button>
             </div>
         </div>
+
+        <section className="withdrawal-helper-section">
+            <div className="withdrawal-helper-grid">
+                <article className="withdrawal-helper-card">
+                    <div className="helper-tag">
+                        <FaExclamationCircle size={16} />
+                        Need help?
+                    </div>
+                    <h4>Fast support when you need it</h4>
+                    <p>Our team is ready to assist if anything looks off. Double-check recipient details and reach out instantly if you need guidance.</p>
+                </article>
+                <article className="withdrawal-helper-card">
+                    <div className="helper-tag">
+                        <FaCheckCircle size={16} />
+                        How withdrawal works
+                    </div>
+                    <h4>Simple, secure, instant</h4>
+                    <p>Select your preferred method, enter the details, and confirm with your PIN. Withdrawals process quickly with transparent status updates.</p>
+                </article>
+                <article className="withdrawal-helper-card">
+                    <div className="helper-tag">
+                        <FaMoneyBillWave size={16} />
+                        Pro tip
+                    </div>
+                    <h4>Keep your transfers safe</h4>
+                    <p>Only send to verified accounts and never share your PIN. Great security starts with smart habits and careful verification.</p>
+                </article>
+            </div>
+        </section>
+
         {selectedMethod && (
             <div className="modal-overlay">
                 <div className="modal-box">

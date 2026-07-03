@@ -3,7 +3,7 @@ import { deposit } from "../api/wallet";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoReturnDownBack } from "react-icons/io5";
-import { FaCreditCard, FaMobileAlt, FaSpinner, FaTimes, FaCheckCircle } from "react-icons/fa";
+import { FaCreditCard, FaMobileAlt, FaSpinner, FaTimes, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 import "../style/deposite.css";
 
 const DepositePage = () => {
@@ -143,6 +143,7 @@ const DepositePage = () => {
     try {
       const body: DepositeRequest = {
         amount,
+        message: true,
         method: selectedMethod === "credit-card" ? "credit-card" : selectedMethod,
         ...(selectedMethod === "credit-card" && {
           expiry: cardExpiry,
@@ -160,7 +161,13 @@ const DepositePage = () => {
       };
 
       const response = await deposit(body);
-      setSuccess(response.message);
+      if (response.message) {
+        setSuccess("Deposit successful");
+      } else {
+        setError("Deposit could not be completed. Please try again.");
+        setLoading(false);
+        return;
+      }
       window.setTimeout(() => {
         setSelectedMethod("");
         setAmount(0);
@@ -222,6 +229,35 @@ const DepositePage = () => {
           </button>
         </div>
       </div>
+
+      <section className="deposit-helper-section">
+        <div className="deposit-helper-grid">
+          <article className="deposit-helper-card">
+            <div className="helper-tag">
+              <FaExclamationCircle size={16} />
+              Need help?
+            </div>
+            <h4>Quick support tips</h4>
+            <p>Have questions? Confirm your payment method and details before submitting to avoid delays.</p>
+          </article>
+          <article className="deposit-helper-card">
+            <div className="helper-tag">
+              <FaCheckCircle size={16} />
+              How deposit works
+            </div>
+            <h4>Deposit in three steps</h4>
+            <p>Select your preferred method, enter amount and details, then confirm. It’s fast, secure, and easy to track.</p>
+          </article>
+          <article className="deposit-helper-card">
+            <div className="helper-tag">
+              <FaMobileAlt size={16} />
+              Smart deposit
+            </div>
+            <h4>Stay secure</h4>
+            <p>Only use verified numbers, never share your PIN, and always double-check the recipient before confirming.</p>
+          </article>
+        </div>
+      </section>
 
       {selectedMethod && (
         <div className="modal-overlay">

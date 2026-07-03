@@ -6,6 +6,7 @@ import HomePage from './pages/Home';
 import Features from './contents/Features';
 import WithdrawPage from './pages/withdraw';
 import DepositePage from './pages/deposite';
+import TransferPage from './pages/transfer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/withdraw" element={<WithdrawPage />} />
         <Route path="/deposit" element={<DepositePage />} />
+        <Route path="/transfer" element={<TransferPage />} />
 
       </Routes>
     </BrowserRouter>

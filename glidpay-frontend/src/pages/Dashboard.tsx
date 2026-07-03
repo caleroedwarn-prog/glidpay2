@@ -126,7 +126,7 @@ const Dashboard = () => {
             </span>
             <span className="dashboard__action-label" >Withdraw</span>
           </button>
-          <button className="dashboard__action-btn dashboard__action-btn--transfer">
+          <button onClick={() => navigate("/transfer")} className="dashboard__action-btn dashboard__action-btn--transfer">
             <span className="dashboard__action-icon">
               <FiSend size={24} />
             </span>

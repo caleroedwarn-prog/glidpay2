@@ -20,6 +20,7 @@ export type DepositeRequest = {
     cvv?: string;
     phoneNumber?: string;
     provider?: string;
+    message?: boolean;
 }
 
 export type WithdrawRequest = {

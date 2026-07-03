@@ -1,0 +1,305 @@
+:root {
+  --bg: #060816;
+  --panel: rgba(255, 255, 255, 0.08);
+  --bg-strong: #0c1329;
+  --text: #f7f8ff;
+  --muted: #9da6c7;
+  --primary: #7c3aed;
+  --secondary: #4f46e5;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.18);
+  --danger: #ef4444;
+  --success: #22c55e;
+  --border: rgba(255, 255, 255, 0.16);
+}
+
+.transfer-page {
+  min-height: calc(100vh - 84px);
+  padding: 26px 24px 40px;
+  color: var(--text);
+  background: radial-gradient(circle at top, #1f2450 0%, #060816 55%);
+}
+
+.transfer-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.92), rgba(59, 130, 246, 0.9));
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(59, 130, 246, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transfer-back-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(59, 130, 246, 0.25);
+}
+
+.transfer-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.transfer-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.transfer-chip {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(124, 58, 237, 0.16);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.transfer-hero-copy h1 {
+  font-size: clamp(2.1rem, 2.4vw, 3rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.transfer-hero-copy p {
+  max-width: 600px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.transfer-hero-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: space-between;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 24px 60px rgba(0, 0, 0, 0.22);
+}
+
+.hero-card-label {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.transfer-hero-card h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.hero-card-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hero-card-grid span {
+  display: block;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.transfer-panel {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.transfer-form-card,
+.transfer-sidebar {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.2);
+}
+
+.transfer-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.transfer-card-subtitle {
+  margin: 0 0 10px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.transfer-form-card h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.form-input {
+  display: grid;
+  gap: 20px;
+}
+
+.form-input label {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-input input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(7, 10, 27, 0.75);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 16px 18px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-input input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+}
+
+.error,
+.success {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+}
+
+.success {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+}
+
+.transfer-submit-btn {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.transfer-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.25);
+}
+
+.transfer-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.transfer-sidebar {
+  display: grid;
+  gap: 20px;
+}
+
+.sidebar-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.sidebar-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+}
+
+.sidebar-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.sidebar-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+  padding-left: 8px;
+}
+
+.sidebar-card li::before {
+  content: "•";
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.highlight-card {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.14), rgba(124, 58, 237, 0.1));
+  border-color: rgba(59, 130, 246, 0.28);
+}
+
+.highlight-card p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+@media (max-width: 980px) {
+  .transfer-hero,
+  .transfer-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .transfer-page {
+    padding: 20px 16px 32px;
+  }
+
+  .transfer-back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
