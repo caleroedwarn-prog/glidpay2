@@ -1,0 +1,200 @@
+:root {
+  --history-bg: #060816;
+  --history-panel: rgba(255, 255, 255, 0.05);
+  --history-text: #f6f7ff;
+  --history-muted: #9da6c7;
+  --history-blue: #3b82f6;
+  --history-violet: #7c3aed;
+  --history-emerald: #10b981;
+  --history-rose: #f43f5e;
+  --history-border: rgba(255, 255, 255, 0.1);
+}
+
+.history-page {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: radial-gradient(circle at top, #16204d 0%, var(--history-bg) 70%);
+  color: var(--history-text);
+  box-sizing: border-box;
+}
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: var(--history-muted);
+}
+
+.history-page h2 {
+  margin: 0 0 28px;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.transaction-list-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px; /* Optional constraint to keep long lines looking tight */
+}
+
+.transaction-category {
+  background: var(--history-panel);
+  border: 1px solid var(--history-border);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.transaction-category:has(button.active) {
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.transaction-category > button {
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+  color: var(--history-text);
+  text-align: left;
+  padding: 20px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.transaction-category > button:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(124, 58, 237, 0.15));
+}
+
+.transaction-category > button.active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(124, 58, 237, 0.2));
+  border-bottom: 1px solid var(--history-border);
+}
+
+.category-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.category-description {
+  margin: 0;
+  color: var(--history-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.transaction-inner-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.transaction-item:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.type {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.type-deposit { color: var(--history-emerald); }
+.type-withdraw { color: var(--history-rose); }
+.type-transfer { color: var(--history-blue); }
+
+.amount {
+  font-size: 1.05rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.Date,
+.Recipient {
+  margin: 0;
+  color: var(--history-muted);
+  font-size: 0.85rem;
+}
+
+.Recipient {
+  color: #c5cbdf;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: var(--history-muted);
+  font-style: italic;
+}
+
+.Error.message {
+  color: #ff7b7b;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .history-page {
+    padding: 24px 16px;
+  }
+
+  .transaction-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item-right {
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    padding-top: 8px;
+  }
+}
+
+.AnalysisPage {
+  margin-top: -45px;
+  padding: 20px;
+  background: var(--history-panel);
+  border: 1px solid var(--history-border);
+  border-radius: 16px;
+}
