@@ -12,7 +12,7 @@
 }
 
 .navbar-logo {
-    width: 120px;
+    width: 150px;
     height: 50px;
     background: none;
     background-color: none;
@@ -23,6 +23,7 @@
     height: 100%;
     object-fit: contain;
     filter: brightness(2);
+    border-radius: 30px;
 }
 
 .Link-name {
@@ -72,7 +73,7 @@
     float: right;
     opacity: 9000%;
     width: 100%;
-    margin-right: 2%;g
+    margin-right: 6%;
     border-radius: 30px;
     border: none;
     outline: none;

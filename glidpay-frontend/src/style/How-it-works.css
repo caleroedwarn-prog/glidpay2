@@ -100,17 +100,16 @@
 }
 
 .followUp-head h3 {
-    position: relative;
-    z-index: 1;
+     position: relative;
+    white-space: nowrap;
+    left: 45%;
     top: -10px;
-    left: 40%;
-    padding: 0 18px;
-    width: fit-content;
-    background: white;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 18px;
+    background: 
+                linear-gradient(180deg, #0b0b1f 0%);
+    width: 10%;
+    font-size: 19px;
+    text-align: center;
+    border-radius: 100px;
 }
 
 .followUp-Header{

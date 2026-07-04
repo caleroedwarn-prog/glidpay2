@@ -93,14 +93,16 @@
 }
 
 .feature-head h3 {
-    position: relative;
-    z-index: 1;
-    padding: 0 18px;
-    background: white;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 18px;
+   position: relative;
+    white-space: nowrap;
+    left: 1%;
+    top: 1px;
+    background: 
+                linear-gradient(180deg, #1c1c38 0%);
+    width: 10%;
+    font-size: 19px;
+    text-align: center;
+    border-radius: 100px;
 }
 .feature pre{
     display: flex;
@@ -109,7 +111,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    background: #413e46;
+    background: #1e0150;
     height: 20px;
     border-radius: 10px;
     color: aliceblue;

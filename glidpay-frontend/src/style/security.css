@@ -91,9 +91,11 @@
     padding: 1rem 1.1rem;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 20px;
-    color: #1a1a1d;
+    color: #efeff7;
     line-height: 1.8;
     text-align: center;
+    overflow: hidden;
+    font-size: 12px;
 }
 .security img{
     width: 100%;
@@ -132,8 +134,10 @@
     white-space: nowrap;
     left: 45%;
     top: -11px;
-    background: white;
-    width: 7%;
+    background: 
+                linear-gradient(180deg, #11112c 0%);
+    width: 6.5%;
     font-size: 19px;
     text-align: center;
+    border-radius: 100px;
 }

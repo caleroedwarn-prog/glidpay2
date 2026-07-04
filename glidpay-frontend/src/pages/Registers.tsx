@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { type RegisterRequest } from "../types/AuthUser";
 import { registerUser } from "../api/auth";
-import "../style/Register.css"              
+import "../style/Register.css"   
+import { IoReturnDownBack } from "react-icons/io5";         
 
 function RegisterPage(){
     
@@ -27,17 +28,29 @@ function RegisterPage(){
             [e.target.name]: e.target.value
         })
     }
-    const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsLoading(true)
-        try{
+        try {
+            /* --- ORIGINAL BACKEND INTEGRATION (COMMENTED OUT) ---
             const res = await registerUser(form)
             if(res){
                 navigate("/login")
             }
-        }catch{
+            ----------------------------------------------------- */
+
+            // FAKE AUTHENTICATION AND VALIDATION DETOUR
+            if (!form.username || !form.password || form.password !== form.confirm_password) {
+                setError("Validation failed. Check passwords match!");
+                return;
+            }
+
+            // Instant fallback redirect mimicking response clearance
+            navigate("/login");
+
+        } catch {
             setError("Registration failed! try again next time")
-        }finally{
+        } finally {
             setIsLoading(false)
         }
     }
@@ -48,6 +61,7 @@ function RegisterPage(){
             <img src="/images/glidpay-logo.png" alt="login" width={600}/>
         </div>
             <div className="Register_form">
+                <IoReturnDownBack size={23} onClick={() => navigate("/")}/>
                 <h1>Register</h1>
                 <pre>Start moving Money the Smarter Way...</pre>
         <form onSubmit={handleSubmit}>

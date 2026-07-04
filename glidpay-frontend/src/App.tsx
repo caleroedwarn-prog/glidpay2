@@ -9,6 +9,7 @@ import DepositePage from './pages/deposite';
 import TransferPage from './pages/transfer';
 import HistoryPage from './pages/history';
 import AnalysisPage from './pages/analysisPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -19,12 +20,12 @@ function App() {
         <Route path='/features' element={<Features/>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/withdraw" element={<WithdrawPage />} />
-        <Route path="/deposit" element={<DepositePage />} />
-        <Route path="/transfer" element={<TransferPage />} />
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/analysis" element={<AnalysisPage />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/withdraw" element={<ProtectedRoute><WithdrawPage /></ProtectedRoute>} />
+        <Route path="/deposit" element={<ProtectedRoute><DepositePage /></ProtectedRoute>} />
+        <Route path="/transfer" element={<ProtectedRoute><TransferPage /></ProtectedRoute>} />
+        <Route path="/history" element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
+        <Route path="/analysis" element={<ProtectedRoute><AnalysisPage /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

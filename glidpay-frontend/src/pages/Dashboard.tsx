@@ -62,7 +62,7 @@ const Dashboard = () => {
           </button>
           <button
             className="dashboard__logout-btn"
-            onClick={logout}
+            onClick={() => navigate("/login")} 
           >
             Logout
           </button>

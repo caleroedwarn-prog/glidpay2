@@ -139,6 +139,7 @@ body {
 .modal-box h3 {
   margin: 12px 0 16px;
   font-size: 1.3rem;
+  color: white;
 }
 
 .General_Form-input,
@@ -149,10 +150,11 @@ body {
   flex-direction: column;
   gap: 8px;
   margin-bottom: 14px;
+  color: #fff;
 }
 
-label {
-  color: #ffffff;
+.label {
+  color: var(--text);
   font-size: 0.95rem;
 }
 
