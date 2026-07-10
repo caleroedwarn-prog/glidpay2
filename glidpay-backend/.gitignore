@@ -4,3 +4,37 @@ __pycache__/
 .env
 *.db
 alembic/versions/
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Secret files — NEVER push these
+.env
+.env.local
+.env.production
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files
+*.db
+*.sqlite3
+
+# VS Code settings
+.vscode/
+
+# Distribution/build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
