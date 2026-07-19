@@ -1,6 +1,6 @@
-from fastapi import  FastAPI, Query
+from fastapi import  FastAPI, Query, Body
 from enum import Enum
-from pydantic import BaseModel, Field, HttpUrl, Body
+from pydantic import BaseModel, Field, HttpUrl
 
 app = FastAPI()
 
@@ -151,3 +151,7 @@ async def update_item(items01_id: int, item: Items):
 @app.post("/offer")
 async def create_offer(offers: Offer = Body(..., embed=True)):
     return offers
+
+@app.post("/Image")
+async def create_images(image: list[Image]):
+    return image
