@@ -1,5 +1,6 @@
-from fastapi import  FastAPI
+from fastapi import  FastAPI, Query
 from enum import Enum
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
@@ -67,3 +68,73 @@ async def get_user(user_id: int):
         "User_id": user_id,
         "User_name": users[user_id]
     }
+ 
+fake_items_db = ({"item_name": "foo"}, {"item_name": "boas"}, {"item_name": "bez"})
+
+@app.get("/item")
+async def lists_items(skip: int, limit: int = 10):
+    return fake_items_db[skip: skip+limit]
+
+@app.get("/item/{id}")
+async def get_id(id: str, q: str | None=None, short: bool=False):
+    item = {"id": id}
+    if q:
+        item.update({"q": q})
+    if not short:
+        item.update({"description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."})
+
+    return item
+
+class item(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    tax: float | None = None
+
+
+@app.post("/item")
+async def create_item(item: item):
+    item_dict = item.dict()
+    if item.tax:
+        price_with_tax = item.price + item.tax
+        item_dict.update({
+            "price_with_tax": price_with_tax
+        })
+    return item_dict
+
+@app.put("/items/{item_id}")
+async def create_item_with_put(item_id: int, item: item, q: str | None = Query(None, max_length=10)):
+    result = {"item_id": item_id, **item.dict()}
+    if q:
+        result.update({"q": q})
+    return result
+
+
+class Fields(BaseModel):
+    name: str
+    description: str | None = Field(None, title="This is the description", max_length = 350)
+    price: float = Field(..., gt= 0, description = "Price > 0")
+    tax: float
+
+@app.post("/field")
+async def enter_fields(Fields: Fields ):
+    if Fields.name:
+        return{"Name": Fields.name}
+    if Fields.price:
+        return{"price": Fields.price}
+    if Fields.tax:
+        total_price = Fields.tax + Fields.price
+        return{"total_price": total_price}
+    
+
+class Items(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    tax: float | None = None
+    tags: list[str] = []
+
+@app.put("/item/{items01_id}")
+async def update_item(items01_id: int, item: Items):
+    result = {"item_idem": items01_id, "item": item}
+    return result
