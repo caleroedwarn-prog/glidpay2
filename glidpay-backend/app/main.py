@@ -1,6 +1,6 @@
 from fastapi import  FastAPI, Query
 from enum import Enum
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl, Body
 
 app = FastAPI()
 
@@ -126,15 +126,28 @@ async def enter_fields(Fields: Fields ):
         total_price = Fields.tax + Fields.price
         return{"total_price": total_price}
     
-
+class Image(BaseModel):
+    url: HttpUrl
+    name: str
 class Items(BaseModel):
     name: str
     description: str | None = None
     price: float
     tax: float | None = None
     tags: list[str] = []
+    image: Image | None = None
+
+class Offer(BaseModel):
+    name: str
+    description: str | None = None
+    price: float
+    items: list[Items] 
 
 @app.put("/item/{items01_id}")
 async def update_item(items01_id: int, item: Items):
     result = {"item_idem": items01_id, "item": item}
     return result
+
+@app.post("/offer")
+async def create_offer(offers: Offer = Body(..., embed=True)):
+    return offers
